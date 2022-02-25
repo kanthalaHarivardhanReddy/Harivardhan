@@ -38,6 +38,7 @@ For your convenience, we are giving you a test server which exposes APIs like
 ```
 
 BaseURL: http://localhost:8090
+PrimesURL: http://localhost:8090/primes
 
 If you have golang installed on your system, following command will help you run this test server
 
