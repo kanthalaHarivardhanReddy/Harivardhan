@@ -1,2 +1,2 @@
 # affordmed-interview
-problem statement for intern selection process
+problem statement for selection process
