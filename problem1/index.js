@@ -35,8 +35,12 @@ app.get('/numbers', async (req,res)=>{
         return s;
     }
     const resultSet = await func();
-    console.log(resultSet)
-    res.send(resultSet)
+    const result = [...resultSet];
+    result.sort();
+    const resultobj = {"number":result}
+    console.log(resultobj)
+
+    res.send(resultobj)
 
 })
 
