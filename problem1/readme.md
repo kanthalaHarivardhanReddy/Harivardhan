@@ -60,7 +60,4 @@ Expected Output:
 ```
 
 ### Please attach a screenshot of Insomnia or Postman making an API call with response body and also with the response timestamp
-
-
-
-![alt text](https://github.com/[username]/[reponame]/blob/[branch]/image.jpg?raw=true)
+![alt text](https://github.com/kanthalaHarivardhanReddy/Harivardhan/blob/main/problem1/image.png?raw=true)
