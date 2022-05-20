@@ -37,7 +37,7 @@ app.get('/numbers', async (req,res)=>{
     const resultSet = await func();
     const result = [...resultSet];
     result.sort();
-    const resultobj = {"number":result}
+    const resultobj = {"numbers":result}
     console.log(resultobj)
 
     res.send(resultobj)
