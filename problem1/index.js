@@ -11,15 +11,15 @@ app.get('/',(req,res)=>{
 
 //http://localhost:port/numbers?url=http://localhost:8090/primes&url=http://localhost:8090/fibo&url=http://localhost:8090/odd
 
-app.get('/numbers',(req,res)=>{
+app.get('/numbers', async (req,res)=>{
     // res.send("Hello, world")
     // res.send(req.query)
     const urls = req.query.url;
-    console.log(urls)
-    let result = []
-    let s = new Set();    
+    // console.log(urls)
+       
 
     const func = async function () {
+        let s = new Set(); 
         for(const i in urls){
             const res = await fetch(urls[i]);
             const json = await res.json();
@@ -27,16 +27,17 @@ app.get('/numbers',(req,res)=>{
             if(json!=={}){
                 console.log(json.numbers)
                 const num = json.numbers;
-                // console.log(result[i])
-                for( const i in num) s.add(num[i])
+                for( const i in num){
+                     s.add(num[i])   
+                }
             }
         }
+        return s;
     }
-    func();
-    setTimeout(()=>{
-        res.send(s)
-    },500
-    )
+    const resultSet = await func();
+    console.log(resultSet)
+    res.send(resultSet)
+
 })
 
 app.listen(PORT, (req, res)=>{
